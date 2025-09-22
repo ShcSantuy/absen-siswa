@@ -3,54 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Absensi Siswa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Laporan - Sistem Absensi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="app-container">
-        <div id="area-cetak">
-            <header class="absensi-header">
-                <div class="header-logo">
-                    <img src="img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
-                    <p>Logo Sekolah</p>
-                </div>
-                <div class="header-title">
-                    <h2>DAFTAR KEHADIRAN SISWA</h2>
-                    <h3>SMP ISLAM BAITUSSALAM</h3>
-                    <p>Jalan Kebraon No. 02 Karangpilang, Surabaya, Jawa Timur</p>
-                </div>
-            </header>
-    
-            <div class="controls">
-                <div class="control-group">
-                    <label for="bulan">Bulan:</label>
-                    <select id="bulan"></select>
-                </div>
-                <div class="control-group">
-                    <label for="tahun">Tahun:</label>
-                    <select id="tahun"></select>
-                </div>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/img/logo-sekolah.png" alt="Logo">
+            <h2>Sistem Absensi</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html">📊 Dasbor</a>
+            <a href="absen-masuk.html">➡️ Absen Masuk</a>
+            <a href="absen-pelajaran.html">📚 Absen Pelajaran</a>
+            <a href="laporan.html" class="active">📋 Laporan</a>
+            <a href="login.html" id="logout-btn">🚪 Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header><h1>Laporan Absensi</h1></header>
+        <section class="content">
+            <div class="filters">
+                <label>Dari: <input type="date" value="2025-08-01"></label>
+                <label>Sampai: <input type="date" value="2025-08-31"></label>
+                <a href="export-pdf.html" target="_blank" class="button">Cetak ke PDF</a>
             </div>
-    
-            <div class="table-container">
-                <table id="tabel-absensi">
+            <div class="table-wrapper">
+                <table>
                     <thead>
-                        </thead>
+                        <tr><th>No</th><th>Nama Siswa</th><th>Hadir</th><th>Izin</th><th>Sakit</th><th>Alfa</th></tr>
+                    </thead>
                     <tbody>
-                        </tbody>
-                    <tfoot>
-                        </tfoot>
+                        <tr><td>1</td><td>JANDIAN BELLY FIRDAUS</td><td>20</td><td>1</td><td>0</td><td>2</td></tr>
+                        <tr><td>2</td><td>ANDI MUHAMMAD FAHREL</td><td>18</td><td>0</td><td>1</td><td>4</td></tr>
+                        <tr><td>3</td><td>FEBRIAN DEVINISTIAN</td><td>22</td><td>0</td><td>0</td><td>1</td></tr>
+                        <tr><td>4</td><td>FRANSISKA NDIREN</td><td>23</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>5</td><td>JUMAEDI</td><td>21</td><td>2</td><td>0</td><td>0</td></tr>
+                        <tr><td>6</td><td>MUHAMAD SANDY SITAWAN</td><td>20</td><td>1</td><td>2</td><td>0</td></tr>
+                        <tr><td>7</td><td>NASAR WETARUELA</td><td>23</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>8</td><td>SITI NUR LAILA</td><td>19</td><td>1</td><td>1</td><td>2</td></tr>
+                    </tbody>
                 </table>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="action-buttons">
-            <a href="index.html" class="btn-secondary">Kembali ke Dashboard</a>
-            <button id="export-pdf-btn" class="btn-main">Ekspor ke PDF</button>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="js/absensi.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
