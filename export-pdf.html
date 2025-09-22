@@ -2,25 +2,37 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sistem Absensi</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Cetak Laporan</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <div class="dashboard-container">
-        <header class="dashboard-header">
-            <img src="img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
-            <h1>Sistem Absensi Digital</h1>
-            <p>SMP ISLAM BAITUSSALAM</p>
-        </header>
-        <main class="dashboard-content">
-            <h2>Selamat Datang, Bapak/Ibu Guru!</h2>
-            <p>Nikmati kemudahan mengelola kehadiran siswa dengan sistem yang efisien dan sederhana. Mari ciptakan proses belajar mengajar yang lebih teratur.</p>
-            <a href="absensi.html" class="btn-main">Mulai Mengabsen Sekarang →</a>
-        </main>
-        <footer>
-            <p>&copy; 2025 Pengembangan Sistem Absensi</p>
-        </footer>
+<body class="print-page">
+    <div class="print-container">
+        <div class="kop-surat">
+            <img src="assets/img/logo-sekolah.png" alt="Logo">
+            <h1>Laporan Rekapitulasi Absensi</h1>
+            <p>Kelas XII ATU - Periode: 1 Agustus 2025 - 31 Agustus 2025</p>
+        </div>
+        <table>
+             <thead>
+                <tr><th>No</th><th>Nama Siswa</th><th>Hadir</th><th>Izin</th><th>Sakit</th><th>Alfa</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>JANDIAN BELLY FIRDAUS</td><td>20</td><td>1</td><td>0</td><td>2</td></tr>
+                <tr><td>2</td><td>ANDI MUHAMMAD FAHREL</td><td>18</td><td>0</td><td>1</td><td>4</td></tr>
+                <tr><td>3</td><td>FEBRIAN DEVINISTIAN</td><td>22</td><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>4</td><td>FRANSISKA NDIREN</td><td>23</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>5</td><td>JUMAEDI</td><td>21</td><td>2</td><td>0</td><td>0</td></tr>
+                <tr><td>6</td><td>MUHAMAD SANDY SITAWAN</td><td>20</td><td>1</td><td>2</td><td>0</td></tr>
+                <tr><td>7</td><td>NASAR WETARUELA</td><td>23</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>8</td><td>SITI NUR LAILA</td><td>19</td><td>1</td><td>1</td><td>2</td></tr>
+            </tbody>
+        </table>
+        <div class="signature">
+            <p>Mengetahui,</p>
+            <p>Wali Kelas</p>
+            <br><br><br>
+            <p class="name">(.................................)</p>
+        </div>
     </div>
 </body>
 </html>
