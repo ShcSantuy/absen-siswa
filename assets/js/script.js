@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Cek username & password (sementara, karena belum ada backend)
             // Ganti 'guru' dan '12345' sesuai keinginan Anda
-            if (username === 'guru' && password === '12345') {
+            if (username === 'kelas Xll atu' && password === 'Xll atu') {
                 // Jika benar, tampilkan loading splash
                 loginForm.style.display = 'none';
                 loadingSplash.style.display = 'block';
