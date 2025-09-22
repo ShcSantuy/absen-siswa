@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Absen Pelajaran - Sistem Absensi</title>
+    <title>Dashboard - Sistem Absensi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+    <body>
     <aside class="sidebar">
         <div class="sidebar-header">
             <img src="assets/img/logo-sekolah.png" alt="Logo">
             <h2>Sistem Absensi</h2>
-        </div>
-        <nav>
-            <a href="dashboard.html">📊 Dasbor</a>
-            <a href="absen-masuk.html">➡️ Absen Masuk</a>
-            <a href="absen-pelajaran.html" class="active">📚 Absen Pelajaran</a>
-            <a href="laporan.html">📋 Laporan</a>
-            <a href="login.html" id="logout-btn">🚪 Logout</a>
+     </div>
+<body>
+    <div class="dashboard-wrapper">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sistem Absensi</h3>
+                </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dasbor</a></li>
+                <li><a href="absen-masuk.html"><i class="fa-solid fa-right-to-bracket"></i> Absen Masuk</a></li>
+                <li><a href="absen-pelajaran.html"><i class="fa-solid fa-book"></i> Absen Pelajaran</a></li>
+                <li><a href="laporan.html"><i class="fa-solid fa-file-alt"></i> Laporan</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
         </nav>
+    
     </aside>
 
     <main class="main-content">
-        <header><h1>Input Absensi Mata Pelajaran</h1></header>
+        <header><h1>Input Absensi Pelajaran</h1></header>
         <section class="content">
             <div class="filters">
                 <label>Pelajaran: <select><option>Matematika</option><option>Bahasa Indonesia</option><option>Fisika</option></select></label>
