@@ -1,52 +1,156 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absen Masuk - Sistem Absensi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="assets/img/logo-sekolah.png" alt="Logo">
-            <h2>Sistem Absensi</h2>
-        </div>
-        <nav>
-            <a href="dashboard.html">📊 Dasbor</a>
-            <a href="absen-masuk.html" class="active">➡️ Absen Masuk</a>
-            <a href="absen-pelajaran.html">📚 Absen Pelajaran</a>
-            <a href="laporan.html">📋 Laporan</a>
-            <a href="login.html" id="logout-btn">🚪 Logout</a>
+    <div class="dashboard-wrapper">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sistem Absensi</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dasbor</a></li>
+                <li class="active"><a href="absen-masuk.html"><i class="fa-solid fa-right-to-bracket"></i> Absen Masuk</a></li>
+                <li><a href="absen-pelajaran.html"><i class="fa-solid fa-book"></i> Absen Pelajaran</a></li>
+                <li><a href="laporan.html"><i class="fa-solid fa-file-alt"></i> Laporan</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
         </nav>
-    </aside>
 
-    <main class="main-content">
-        <header><h1>Input Absensi Harian</h1></header>
-        <section class="content">
-            <div class="filters">
-                <label>Tanggal: <input type="date" value="2025-09-22"></label>
+        <main class="main-content">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <div class="header-main">
+                <h2>Formulir Absensi Masuk</h2>
+                <div class="user-info">
+                    <span>Tanggal: 22 September 2025</span>
+                </div>
             </div>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>No</th><th>Nama Siswa</th><th>Status Kehadiran</th><th>Keterangan</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td class="nama-siswa">JANDIAN BELLY FIRDAUS</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>2</td><td class="nama-siswa">ANDI MUHAMMAD FAHREL</td><td><div class="status-buttons"><button class="hadir">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa active">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>3</td><td class="nama-siswa">FEBRIAN DEVINISTIAN</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>4</td><td class="nama-siswa">FRANSISKA NDIREN</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>5</td><td class="nama-siswa">JUMAEDI</td><td><div class="status-buttons"><button class="hadir">H</button><button class="izin active">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>6</td><td class="nama-siswa">MUHAMAD SANDY SITAWAN</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>7</td><td class="nama-siswa">NASAR WETARUELA</td><td><div class="status-buttons"><button class="hadir">H</button><button class="izin">I</button><button class="sakit active">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                        <tr><td>8</td><td class="nama-siswa">SITI NUR LAILA</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
-                    </tbody>
-                </table>
+
+            <div class="content-body">
+                <div class="student-table-card">
+                    <form id="form-absensi">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Siswa</th>
+                                    <th>Kehadiran</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>JANDIAN BELLY FIRDAUS</td>
+                                    <td>
+                                        <select name="status_1">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>ANDI MUHAMMAD FAHREL NUR ILHAM RAMLI</td>
+                                    <td>
+                                        <select name="status_2">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>FEBRIAN DEVINISTIAN ALLUY GEBZE</td>
+                                    <td>
+                                        <select name="status_3">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>FRANSISKA NDIIREN</td>
+                                    <td>
+                                        <select name="status_4">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>JUNAEDI</td>
+                                    <td>
+                                        <select name="status_5">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>MUHAMAD SANDY SITIAWAN</td>
+                                    <td>
+                                        <select name="status_6">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>NASAR WETARLELA</td>
+                                    <td>
+                                        <select name="status_7">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>SITI NURLAILA</td>
+                                    <td>
+                                        <select name="status_8">
+                                            <option value="Hadir">Hadir</option>
+                                            <option value="Sakit">Sakit</option>
+                                            <option value="Izin">Izin</option>
+                                            <option value="Alfa">Alfa</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="submit-button">Simpan Absensi</button>
+                    </form>
+                </div>
             </div>
-            <button class="button save-btn">Simpan Absensi</button>
-        </section>
-    </main>
+        </main>
+    </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
