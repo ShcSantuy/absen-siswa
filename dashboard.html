@@ -3,54 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Absensi Siswa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Dasbor - Sistem Absensi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="app-container">
-        <div id="area-cetak">
-            <header class="absensi-header">
-                <div class="header-logo">
-                    <img src="img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
-                    <p>Logo Sekolah</p>
-                </div>
-                <div class="header-title">
-                    <h2>DAFTAR KEHADIRAN SISWA</h2>
-                    <h3>SMP ISLAM BAITUSSALAM</h3>
-                    <p>Jalan Kebraon No. 02 Karangpilang, Surabaya, Jawa Timur</p>
-                </div>
-            </header>
-    
-            <div class="controls">
-                <div class="control-group">
-                    <label for="bulan">Bulan:</label>
-                    <select id="bulan"></select>
-                </div>
-                <div class="control-group">
-                    <label for="tahun">Tahun:</label>
-                    <select id="tahun"></select>
-                </div>
-            </div>
-    
-            <div class="table-container">
-                <table id="tabel-absensi">
-                    <thead>
-                        </thead>
-                    <tbody>
-                        </tbody>
-                    <tfoot>
-                        </tfoot>
-                </table>
-            </div>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/img/logo-sekolah.png" alt="Logo">
+            <h2>Sistem Absensi</h2>
         </div>
+        <nav>
+            <a href="dashboard.html" class="active">📊 Dasbor</a>
+            <a href="absen-masuk.html">➡️ Absen Masuk</a>
+            <a href="absen-pelajaran.html">📚 Absen Pelajaran</a>
+            <a href="laporan.html">📋 Laporan</a>
+            <a href="login.html" id="logout-btn">🚪 Logout</a>
+        </nav>
+    </aside>
 
-        <div class="action-buttons">
-            <a href="index.html" class="btn-secondary">Kembali ke Dashboard</a>
-            <button id="export-pdf-btn" class="btn-main">Ekspor ke PDF</button>
-        </div>
-    </div>
+    <main class="main-content">
+        <header>
+            <h1>Dasbor Utama</h1>
+            <div class="profile">
+                <img src="assets/img/user-icon.svg" alt="User">
+                <span>Kelas XII ATU</span>
+            </div>
+        </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="js/absensi.js"></script>
+        <section class="content">
+            <div class="welcome-message">
+                <h2>Selamat Datang, Bapak/Ibu Guru.</h2>
+                <p>Selamat bergabung di Sistem Absensi Digital. Platform ini kami sediakan untuk menyederhanakan proses administratif, sehingga Anda dapat lebih fokus pada misi utama kita: mencerdaskan anak bangsa.</p>
+                <p>Terima kasih atas dedikasi dan kerja keras Anda. <strong>Selamat bekerja!</strong></p>
+            </div>
+            
+            <h3>Ringkasan Kehadiran Hari Ini (Contoh)</h3>
+            <div class="info-cards">
+                <div class="card"><h3>Hadir</h3><div class="number green">28</div></div>
+                <div class="card"><h3>Izin</h3><div class="number yellow">1</div></div>
+                <div class="card"><h3>Sakit</h3><div class="number blue">1</div></div>
+                <div class="card"><h3>Alfa</h3><div class="number red">2</div></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
