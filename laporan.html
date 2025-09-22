@@ -1,53 +1,123 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan - Sistem Absensi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="assets/img/logo-sekolah.png" alt="Logo">
-            <h2>Sistem Absensi</h2>
-        </div>
-        <nav>
-            <a href="dashboard.html">📊 Dasbor</a>
-            <a href="absen-masuk.html">➡️ Absen Masuk</a>
-            <a href="absen-pelajaran.html">📚 Absen Pelajaran</a>
-            <a href="laporan.html" class="active">📋 Laporan</a>
-            <a href="login.html" id="logout-btn">🚪 Logout</a>
+    <div class="dashboard-wrapper">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sistem Absensi</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dasbor</a></li>
+                <li><a href="absen-masuk.html"><i class="fa-solid fa-right-to-bracket"></i> Absen Masuk</a></li>
+                <li><a href="absen-pelajaran.html"><i class="fa-solid fa-book"></i> Absen Pelajaran</a></li>
+                <li class="active"><a href="laporan.html"><i class="fa-solid fa-file-alt"></i> Laporan</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
         </nav>
-    </aside>
 
-    <main class="main-content">
-        <header><h1>Laporan Absensi</h1></header>
-        <section class="content">
-            <div class="filters">
-                <label>Dari: <input type="date" value="2025-08-01"></label>
-                <label>Sampai: <input type="date" value="2025-08-31"></label>
-                <a href="export-pdf.html" target="_blank" class="button">Cetak ke PDF</a>
+        <main class="main-content">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <div class="header-main">
+                <h2>Laporan Kehadiran Siswa</h2>
+                <div class="user-info">
+                    <span>Bulan: Agustus 2025</span>
+                </div>
             </div>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>No</th><th>Nama Siswa</th><th>Hadir</th><th>Izin</th><th>Sakit</th><th>Alfa</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>JANDIAN BELLY FIRDAUS</td><td>20</td><td>1</td><td>0</td><td>2</td></tr>
-                        <tr><td>2</td><td>ANDI MUHAMMAD FAHREL</td><td>18</td><td>0</td><td>1</td><td>4</td></tr>
-                        <tr><td>3</td><td>FEBRIAN DEVINISTIAN</td><td>22</td><td>0</td><td>0</td><td>1</td></tr>
-                        <tr><td>4</td><td>FRANSISKA NDIREN</td><td>23</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td>5</td><td>JUMAEDI</td><td>21</td><td>2</td><td>0</td><td>0</td></tr>
-                        <tr><td>6</td><td>MUHAMAD SANDY SITAWAN</td><td>20</td><td>1</td><td>2</td><td>0</td></tr>
-                        <tr><td>7</td><td>NASAR WETARUELA</td><td>23</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td>8</td><td>SITI NUR LAILA</td><td>19</td><td>1</td><td>1</td><td>2</td></tr>
-                    </tbody>
-                </table>
+
+            <div class="content-body">
+                <div class="student-table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Siswa</th>
+                                <th>Hadir</th>
+                                <th>Sakit</th>
+                                <th>Izin</th>
+                                <th>Alfa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td>1</td>
+                                <td>JANDIAN BELLY FIRDAUS</td>
+                                <td>20</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ANDI MUHAMMAD FAHREL NUR ILHAM RAMLI</td>
+                                <td>22</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>FEBRIAN DEVINISTIAN ALLUY GEBZE</td>
+                                <td>19</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>FRANSISKA NDIIREN</td>
+                                <td>18</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>JUNAEDI</td>
+                                <td>22</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>MUHAMAD SANDY SITIAWAN</td>
+                                <td>21</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NASAR WETARLELA</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>SITI NURLAILA</td>
+                                <td>19</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </section>
-    </main>
+        </main>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
