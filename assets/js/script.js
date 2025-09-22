@@ -1,33 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+// Menunggu seluruh halaman HTML dimuat
+document.addEventListener('DOMContentLoaded', function() {
 
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
+    // --- FUNGSI UNTUK TOMBOL STATUS ABSENSI ---
+    const allStatusButtonContainers = document.querySelectorAll('.status-buttons');
+
+    // Loop untuk setiap baris siswa
+    allStatusButtonContainers.forEach(container => {
+        // Menambahkan event listener ke setiap container
+        container.addEventListener('click', function(event) {
+            // Cek apakah yang diklik adalah sebuah tombol
+            if (event.target.tagName === 'BUTTON') {
+                // Ambil semua tombol di dalam container yang sama
+                const buttonsInContainer = container.querySelectorAll('button');
+                
+                // Hapus kelas 'active' dari semua tombol
+                buttonsInContainer.forEach(btn => {
+                    btn.classList.remove('active');
                 });
-            }
 
-            // Tutup menu setelah navigasi di klik (khusus di mobile)
-            const mainNav = document.querySelector('.main-nav');
-            if (mainNav.classList.contains('active')) {
-                mainNav.classList.remove('active');
+                // Tambahkan kelas 'active' hanya ke tombol yang diklik
+                event.target.classList.add('active');
             }
         });
     });
 
-    // Menangani klik pada tombol menu hamburger
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
+    // --- FUNGSI UNTUK TOMBOL SIMPAN ---
+    const saveButton = document.querySelector('.save-btn');
+    if (saveButton) {
+        saveButton.addEventListener('click', function() {
+            alert('Data absensi berhasil disimpan!');
+        });
+    }
 
-    menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-    });
+    // --- FUNGSI UNTUK TOMBOL LOGOUT ---
+    const logoutButton = document.getElementById('logout-btn');
+    if(logoutButton) {
+        logoutButton.addEventListener('click', function(event){
+            // Mencegah perpindahan halaman langsung
+            event.preventDefault(); 
+            // Menampilkan konfirmasi
+            const userConfirmed = confirm("Apakah Anda yakin ingin logout?");
+            if (userConfirmed) {
+                // Jika user menekan "OK", arahkan ke halaman login
+                window.location.href = logoutButton.href;
+            }
+        });
+    }
 
-    console.log("Fanstore website loaded successfully!");
 });
