@@ -1,51 +1,82 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasbor - Sistem Absensi</title>
+    <title>Dashboard - Sistem Absensi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="assets/img/logo-sekolah.png" alt="Logo">
-            <h2>Sistem Absensi</h2>
-        </div>
-        <nav>
-            <a href="dashboard.html" class="active">📊 Dasbor</a>
-            <a href="absen-masuk.html">➡️ Absen Masuk</a>
-            <a href="absen-pelajaran.html">📚 Absen Pelajaran</a>
-            <a href="laporan.html">📋 Laporan</a>
-            <a href="login.html" id="logout-btn">🚪 Logout</a>
+    <div class="dashboard-wrapper">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sistem Absensi</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dasbor</a></li>
+                <li><a href="absen-masuk.html"><i class="fa-solid fa-right-to-bracket"></i> Absen Masuk</a></li>
+                <li><a href="absen-pelajaran.html"><i class="fa-solid fa-book"></i> Absen Pelajaran</a></li>
+                <li><a href="laporan.html"><i class="fa-solid fa-file-alt"></i> Laporan</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
         </nav>
-    </aside>
 
-    <main class="main-content">
-        <header>
-            <h1>Dasbor Utama</h1>
-            <div class="profile">
-                <img src="assets/img/user-icon.svg" alt="User">
-                <span>Kelas XII ATU</span>
-            </div>
-        </header>
-
-        <section class="content">
-            <div class="welcome-message">
-                <h2>Selamat Datang, Bapak/Ibu Guru.</h2>
-                <p>Selamat bergabung di Sistem Absensi Digital. Platform ini kami sediakan untuk menyederhanakan proses administratif, sehingga Anda dapat lebih fokus pada misi utama kita: mencerdaskan anak bangsa.</p>
-                <p>Terima kasih atas dedikasi dan kerja keras Anda. <strong>Selamat bekerja!</strong></p>
-            </div>
+        <main class="main-content">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             
-            <h3>Ringkasan Kehadiran Hari Ini (Contoh)</h3>
-            <div class="info-cards">
-                <div class="card"><h3>Hadir</h3><div class="number green">28</div></div>
-                <div class="card"><h3>Izin</h3><div class="number yellow">1</div></div>
-                <div class="card"><h3>Sakit</h3><div class="number blue">1</div></div>
-                <div class="card"><h3>Alfa</h3><div class="number red">2</div></div>
+            <div class="header-main">
+                <h2>Dasbor Utama</h2>
+                <div class="user-info">
+                    <span>Kelas: XII ATU</span>
+                </div>
             </div>
-        </section>
-    </main>
+
+            <div class="content-body">
+                <div class="welcome-card">
+                    <h3>Selamat Datang, Bapak/Ibu Guru.</h3>
+                    <p>Silakan kelola absensi siswa melalui menu di samping. Laporan kehadiran hari ini dapat dilihat di bawah.</p>
+                </div>
+                
+                <div class="student-table-card">
+                    <h3>Ringkasan Kehadiran Hari Ini (Contoh)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Siswa</th>
+                                <th>Status Kehadiran</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>JANDIAN BELLY FIRDAUS</td>
+                                <td><span class="status hadir">Hadir</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ANDI MUHAMMAD FAHREL</td>
+                                <td><span class="status hadir">Hadir</span></td>
+                            </tr>
+                             <tr>
+                                <td>3</td>
+                                <td>FEBRIAN DEVINISTIAN</td>
+                                <td><span class="status sakit">Sakit</span></td>
+                            </tr>
+                             <tr>
+                                <td>4</td>
+                                <td>FRANSISKA NDIIREN</td>
+                                <td><span class="status alfa">Alfa</span></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
