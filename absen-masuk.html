@@ -3,54 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Absensi Siswa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Absen Masuk - Sistem Absensi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="app-container">
-        <div id="area-cetak">
-            <header class="absensi-header">
-                <div class="header-logo">
-                    <img src="img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
-                    <p>Logo Sekolah</p>
-                </div>
-                <div class="header-title">
-                    <h2>DAFTAR KEHADIRAN SISWA</h2>
-                    <h3>SMP ISLAM BAITUSSALAM</h3>
-                    <p>Jalan Kebraon No. 02 Karangpilang, Surabaya, Jawa Timur</p>
-                </div>
-            </header>
-    
-            <div class="controls">
-                <div class="control-group">
-                    <label for="bulan">Bulan:</label>
-                    <select id="bulan"></select>
-                </div>
-                <div class="control-group">
-                    <label for="tahun">Tahun:</label>
-                    <select id="tahun"></select>
-                </div>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/img/logo-sekolah.png" alt="Logo">
+            <h2>Sistem Absensi</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html">📊 Dasbor</a>
+            <a href="absen-masuk.html" class="active">➡️ Absen Masuk</a>
+            <a href="absen-pelajaran.html">📚 Absen Pelajaran</a>
+            <a href="laporan.html">📋 Laporan</a>
+            <a href="login.html" id="logout-btn">🚪 Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header><h1>Input Absensi Harian</h1></header>
+        <section class="content">
+            <div class="filters">
+                <label>Tanggal: <input type="date" value="2025-09-22"></label>
             </div>
-    
-            <div class="table-container">
-                <table id="tabel-absensi">
+            <div class="table-wrapper">
+                <table>
                     <thead>
-                        </thead>
+                        <tr><th>No</th><th>Nama Siswa</th><th>Status Kehadiran</th><th>Keterangan</th></tr>
+                    </thead>
                     <tbody>
-                        </tbody>
-                    <tfoot>
-                        </tfoot>
+                        <tr><td>1</td><td class="nama-siswa">JANDIAN BELLY FIRDAUS</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>2</td><td class="nama-siswa">ANDI MUHAMMAD FAHREL</td><td><div class="status-buttons"><button class="hadir">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa active">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>3</td><td class="nama-siswa">FEBRIAN DEVINISTIAN</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>4</td><td class="nama-siswa">FRANSISKA NDIREN</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>5</td><td class="nama-siswa">JUMAEDI</td><td><div class="status-buttons"><button class="hadir">H</button><button class="izin active">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>6</td><td class="nama-siswa">MUHAMAD SANDY SITAWAN</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>7</td><td class="nama-siswa">NASAR WETARUELA</td><td><div class="status-buttons"><button class="hadir">H</button><button class="izin">I</button><button class="sakit active">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                        <tr><td>8</td><td class="nama-siswa">SITI NUR LAILA</td><td><div class="status-buttons"><button class="hadir active">H</button><button class="izin">I</button><button class="sakit">S</button><button class="alfa">A</button></div></td><td><input type="text" placeholder="Isi jika perlu..."></td></tr>
+                    </tbody>
                 </table>
             </div>
-        </div>
-
-        <div class="action-buttons">
-            <a href="index.html" class="btn-secondary">Kembali ke Dashboard</a>
-            <button id="export-pdf-btn" class="btn-main">Ekspor ke PDF</button>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="js/absensi.js"></script>
+            <button class="button save-btn">Simpan Absensi</button>
+        </section>
+    </main>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
