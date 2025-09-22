@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sistem Absensi</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Login - Sistem Absensi Profesional</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
-    <div class="dashboard-container">
-        <header class="dashboard-header">
-            <img src="img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
-            <h1>Sistem Absensi Digital</h1>
-            <p>SMP ISLAM BAITUSSALAM</p>
-        </header>
-        <main class="dashboard-content">
-            <h2>Selamat Datang, Bapak/Ibu Guru!</h2>
-            <p>Nikmati kemudahan mengelola kehadiran siswa dengan sistem yang efisien dan sederhana. Mari ciptakan proses belajar mengajar yang lebih teratur.</p>
-            <a href="absensi.html" class="btn-main">Mulai Mengabsen Sekarang →</a>
-        </main>
-        <footer>
-            <p>&copy; 2025 Pengembangan Sistem Absensi</p>
-        </footer>
+    <div class="login-container">
+        <img src="assets/img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
+        <h1>Sistem Absensi Siswa</h1>
+        <p>Silakan masuk untuk mengakses dasbor.</p>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required autocomplete="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required autocomplete="current-password">
+            </div>
+            <button type="submit">Login</button>
+            <p id="error-message"></p>
+        </form>
     </div>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>
+
