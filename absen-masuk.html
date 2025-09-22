@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Absensi Siswa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="area-cetak">
+            <header class="absensi-header">
+                <div class="header-logo">
+                    <img src="img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
+                    <p>Logo Sekolah</p>
+                </div>
+                <div class="header-title">
+                    <h2>DAFTAR KEHADIRAN SISWA</h2>
+                    <h3>SMP ISLAM BAITUSSALAM</h3>
+                    <p>Jalan Kebraon No. 02 Karangpilang, Surabaya, Jawa Timur</p>
+                </div>
+            </header>
+    
+            <div class="controls">
+                <div class="control-group">
+                    <label for="bulan">Bulan:</label>
+                    <select id="bulan"></select>
+                </div>
+                <div class="control-group">
+                    <label for="tahun">Tahun:</label>
+                    <select id="tahun"></select>
+                </div>
+            </div>
+    
+            <div class="table-container">
+                <table id="tabel-absensi">
+                    <thead>
+                        </thead>
+                    <tbody>
+                        </tbody>
+                    <tfoot>
+                        </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="index.html" class="btn-secondary">Kembali ke Dashboard</a>
+            <button id="export-pdf-btn" class="btn-main">Ekspor ke PDF</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/absensi.js"></script>
+</body>
+</html>
