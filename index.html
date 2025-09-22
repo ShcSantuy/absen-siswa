@@ -1,30 +1,44 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-ag">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistem Absensi Profesional</title>
-    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Login - Sistem Absensi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="login-container">
-        <img src="assets/img/logo-sekolah.png" alt="Logo Sekolah" class="logo">
-        <h1>Sistem Absensi Siswa</h1>
-        <p>Silakan masuk untuk mengakses dasbor.</p>
-        <form id="loginForm">
+        <form id="login-form" class="login-form">
+            <h2>Sistem Absensi Digital</h2>
+            <p>Silakan masuk untuk melanjutkan</p>
+            
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" required autocomplete="username">
+                <input type="text" id="username" name="username" required>
             </div>
+            
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" required autocomplete="current-password">
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required>
+                    <i class="fa-solid fa-eye" id="toggle-password"></i>
+                </div>
             </div>
-            <button type="submit">Login</button>
-            <p id="error-message"></p>
+
+            <p id="error-notification" class="error-message" style="display: none;">
+                Username atau Password salah!
+            </p>
+            
+            <button type="submit" class="login-button">Login</button>
         </form>
+
+        <div id="loading-splash" class="loading-splash" style="display: none;">
+            <div class="spinner"></div>
+            <p>Login Berhasil, Mengalihkan ke Dashboard...</p>
+        </div>
     </div>
-    <script src="assets/js/login.js"></script>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
-
